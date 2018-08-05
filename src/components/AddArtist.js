@@ -6,7 +6,7 @@ import { withStyles } from "@material-ui/core/styles";
 
 import ChannelLayout from "../layout/ChannelLayout";
 
-const API_KEY = "AIzaSyAskAaX_vZNeHgw18OWrxvzygJfsQT9VXg";
+const API_KEY = process.env.REACT_APP_YOUTUBE_API_KEY;
 
 const styles = {
   root: {

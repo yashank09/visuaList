@@ -1,13 +1,10 @@
 import React, { Component } from "react";
-import YouTube from "react-youtube";
 
 import Details from '../store/index';
 
 import { Grid, Card, CardContent, Typography } from "@material-ui/core";
 
 import { withStyles } from "@material-ui/core/styles";
-
-const API_KEY = "AIzaSyAskAaX_vZNeHgw18OWrxvzygJfsQT9VXg";
 
 const styles = theme => ({
   root: {

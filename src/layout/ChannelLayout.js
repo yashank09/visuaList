@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 
-import Details from "../store/index";
-
-import { Grid, Card, Typography } from "@material-ui/core";
+import { Grid } from "@material-ui/core";
 
 import { withStyles } from "@material-ui/core/styles";
+
+import ChannelCard from "../layout/ChannelCard";
 
 const styles = theme => ({
   root: {
@@ -22,15 +22,14 @@ const styles = theme => ({
   }
 });
 
-const API_KEY = "AIzaSyAskAaX_vZNeHgw18OWrxvzygJfsQT9VXg";
+const API_KEY = process.env.REACT_APP_YOUTUBE_API_KEY;
 
 class ChannelLayout extends Component {
   constructor(props) {
     super(props);
     this.state = {
       channelInfo: false,
-      channelData: [],
-      justify: "center"
+      channelData: []
     };
   }
 
@@ -47,17 +46,14 @@ class ChannelLayout extends Component {
 
   render() {
     const { classes } = this.props;
-    const { justify } = this.state;
     let title = this.state.channelData[0];
     return (
       <Grid item xs={6} md={4} className={classes.root}>
-        {title && (
-          <Grid container justify={justify}>
-            <Card className={classes.card}>
-              <p>{title.snippet.title}</p>
-            </Card>
-          </Grid>
-        )}
+        {
+          title && 
+          <ChannelCard data={title} />
+
+        }
       </Grid>
     );
   }
