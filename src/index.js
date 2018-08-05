@@ -6,10 +6,12 @@ import registerServiceWorker from "./registerServiceWorker";
 
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 
+import {BrowserRouter} from 'react-router-dom';
+
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: "#cc181e"
+      main: "#ED0000"
     },
     typography: {
       fontFamily: "Roboto"
@@ -25,5 +27,5 @@ function Root() {
   );
 }
 
-ReactDOM.render(<Root />, document.getElementById("root"));
+ReactDOM.render(<BrowserRouter><Root /></BrowserRouter>, document.getElementById("root"));
 registerServiceWorker();

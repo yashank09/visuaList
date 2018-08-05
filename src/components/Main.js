@@ -1,13 +1,15 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import Details from "../store/index";
+import { Route, withRouter } from "react-router-dom";
 
 import { Grid, Typography, Paper } from "@material-ui/core";
 
 import { withStyles } from "@material-ui/core/styles";
 
-import AddService from "../layout/AddService";
+import AddLayout from "../layout/AddLayout";
 import ArtistCard from "./ArtistCard";
+import AddArtist from "./AddArtist";
 
 const styles = theme => ({
   root: {
@@ -53,24 +55,22 @@ class Main extends Component {
   render() {
     const { classes } = this.props;
     return (
-        <Grid container className={classes.root}>
-          <Paper className={classes.back} elevation={1}>
-            <Typography
-              className={classes.font}
-              variant="headline"
-              component="h3"
-            >
-              Save and Watch your Favourite YouTube Artists
-            </Typography>
-            <div>
-              <AddService />
-            </div>
-            <Grid>
-              {this.state.showArtist &&
-                Details.id.map(artist => <ArtistCard />)}
-            </Grid>
-          </Paper>
-        </Grid>
+      <Grid container className={classes.root}>
+        <Paper className={classes.back} elevation={1}>
+          <Typography
+            className={classes.font}
+            variant="headline"
+            component="h3"
+          >
+            Save and Watch your Favourite YouTube Artists
+          </Typography>
+          <div>
+            <AddLayout/>
+          </div>
+        <Route exact path="/" component={ArtistCard} />
+        <Route exact path="/addArtist" component={AddArtist} />
+        </Paper>
+      </Grid>
     );
   }
 }
@@ -79,4 +79,4 @@ Main.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(Main);
+export default withRouter(withStyles(styles)(Main));

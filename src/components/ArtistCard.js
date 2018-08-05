@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import YouTube from "react-youtube";
 
-import details from '../store/index';
+import Details from '../store/index';
 
 import { Grid, Card, CardContent, Typography } from "@material-ui/core";
 
@@ -18,7 +18,7 @@ const styles = theme => ({
   card: {
     width: 180,
     height: 200,
-    background: "#cc181e"
+    background: "#ED0000"
   },
   font: {
     color: "#eeeeee"
@@ -34,15 +34,7 @@ class Subs extends Component {
     };
   }
 
-  componentDidMount() {
-    fetch(`https://www.googleapis.com/youtube/v3/channels?part=id&forUsername=taylorgangent&key=${API_KEY}
-    `)
-      .then(res => res.json())
-      .then(data => this.setState({ id: data.items[0].id }));
-  }
-
   _onReady(event) {
-    // access to player in all event handlers via event.target
     event.target.pauseVideo();
   }
 
@@ -51,27 +43,25 @@ class Subs extends Component {
       height: "450",
       width: "680",
       playerVars: {
-        // https://developers.google.com/youtube/player_parameters
         autoplay: 1
       }
     };
 
     const { classes } = this.props;
     return (
+      <div>
+        { Details.id.length !== 0 &&
       <Grid className={classes.root}>
         <Card className={classes.card}>
           <CardContent>
-            <Typography variant="subheading" className={classes.font}>
+            <Typography variant="headline" className={classes.font}>
               This is Paper
             </Typography>
           </CardContent>
         </Card>
-        {/* <YouTube
-        videoId="2g811Eo7K8U"
-        opts={opts}
-        onReady={this._onReady}
-      /> */}
       </Grid>
+        }
+      </div>
     );
   }
 }
