@@ -4,7 +4,7 @@ import { Grid } from "@material-ui/core";
 
 import { withStyles } from "@material-ui/core/styles";
 
-import ChannelCard from "../layout/ChannelCard";
+import ChannelCard from "../components/ChannelCard";
 
 const styles = theme => ({
   root: {

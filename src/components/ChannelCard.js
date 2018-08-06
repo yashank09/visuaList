@@ -42,7 +42,7 @@ class ChannelCard extends Component {
     const channelData = this.props.data.snippet;
     const title = channelData.title;
     const imgUrl = channelData.thumbnails.medium.url;
-    const profileUrl = channelData.customUrl;
+    const profileUrl = this.props.data.id;
     const { classes } = this.props;
     const { justify } = this.state;
     return (

@@ -14,7 +14,6 @@ import Artist from "./Artist";
 
 const styles = theme => ({
   root: {
-    ...theme.mixins.gutters(),
     paddingTop: theme.spacing.unit * 1,
     paddingBottom: theme.spacing.unit * 1
   },
@@ -43,10 +42,6 @@ class Main extends Component {
   }
 
   componentDidMount() {
-    window.YTConfig = {
-      host: "https://www.youtube.com"
-    };
-
     if (Details.id.length !== 0) {
       this.setState({ showArtist: true });
     }

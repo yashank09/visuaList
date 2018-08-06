@@ -2,13 +2,12 @@ import React, { Component } from "react";
 
 import {withRouter} from "react-router-dom";
 
-import { view, store } from "react-easy-state";
+import { view } from "react-easy-state";
 import details from "../store/index";
 
 import { Grid, Card, CardMedia, Typography } from "@material-ui/core";
 
 import { withStyles } from "@material-ui/core/styles";
-import Artist from "../components/Artist";
 
 const styles = theme => ({
   root: {
