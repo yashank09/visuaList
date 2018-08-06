@@ -36,14 +36,6 @@ class Subs extends Component {
   }
 
   render() {
-    const opts = {
-      height: "450",
-      width: "680",
-      playerVars: {
-        autoplay: 1
-      }
-    };
-
     const { classes } = this.props;
     return (
       <div>

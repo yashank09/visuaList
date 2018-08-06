@@ -14,8 +14,7 @@ const styles = {
   },
   input: {
     width: 200,
-    color: "#eeeeee",
-    transform: "capitalize"
+    color: "#eeeeee"
   }
 };
 
@@ -33,7 +32,7 @@ class AddArtist extends Component {
     let query = this.state.search;
     let dataId = [];
     await fetch(
-      `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${query}&type=channel&key=${API_KEY}`
+      `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${query}&type=channel&key=${API_KEY}&maxResults=6`
     )
       .then(res => res.json())
       .then(data => data.items.map(id => dataId.push(id.id)))
@@ -56,6 +55,7 @@ class AddArtist extends Component {
               InputProps={{
                 className: classes.input
               }}
+              inputStyle={{ textTransform: 'capitalize'}}
               onChange={this.getSearch}
               value={this.state.search}
             />

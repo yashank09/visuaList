@@ -26,10 +26,6 @@ const styles = {
 };
 
 class AddService extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   addArtist = () => {
     this.props.history.push("/addArtist");
   };

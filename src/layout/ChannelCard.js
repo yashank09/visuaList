@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 
-import Details from "../store/index";
+// import Details from "../store/index";
 
-import { Grid, Card, CardMedia } from "@material-ui/core";
+import { Grid, Card, CardMedia,Typography } from "@material-ui/core";
 
 import { withStyles } from "@material-ui/core/styles";
 
@@ -16,8 +16,8 @@ const styles = {
     marginTop: 10
   },
   media: {
-      width: 180,
-      height: 200
+      width: 200,
+      height: 220
   }
 };
 
@@ -44,6 +44,8 @@ class ChannelCard extends Component {
             title="Contemplative Reptile"
           />
         </Card>
+
+        <Typography>aSAS</Typography>
       </Grid>
     );
   }

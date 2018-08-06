@@ -4,7 +4,6 @@ import PropTypes from "prop-types";
 import {
   AppBar,
   Toolbar,
-  Button,
   Typography
 } from "@material-ui/core";
 
@@ -15,7 +14,6 @@ const styles = {
     flexGrow: 1,
   },
   flex: {
-    paddingLeft: 50,
     flexGrow: 1
   }
 };
@@ -29,7 +27,6 @@ function Header(props) {
           <Typography  className={classes.flex} variant="title" color="inherit">
             VisuaList
           </Typography>
-          <Button color="inherit">Login</Button>
         </Toolbar>
       </AppBar>
     </div>
