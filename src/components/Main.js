@@ -8,8 +8,9 @@ import { Grid, Typography, Paper } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
 
 import AddLayout from "../layout/AddLayout";
-import ArtistCard from "./ArtistCard";
+import ArtistLayout from "../layout/ArtistLayout";
 import AddArtist from "./AddArtist";
+import Artist from "./Artist";
 
 const styles = theme => ({
   root: {
@@ -29,8 +30,7 @@ const styles = theme => ({
     paddingBottom: 80
   },
   font: {
-    color: "#eeeeee",
-    paddingTop: 20
+    color: "#eeeeee"
   }
 });
 
@@ -65,10 +65,11 @@ class Main extends Component {
             Save and Watch your Favourite YouTube Artists
           </Typography>
           <div>
-            <AddLayout/>
+            <AddLayout />
           </div>
-        <Route exact path="/" component={ArtistCard} />
-        <Route exact path="/addArtist" component={AddArtist} />
+          <Route exact path="/" component={ArtistLayout} />
+          <Route exact path="/addArtist" component={AddArtist} />
+          <Route exact path="/artist/:id" component={Artist} />
         </Paper>
       </Grid>
     );

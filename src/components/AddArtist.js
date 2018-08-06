@@ -10,7 +10,7 @@ const API_KEY = process.env.REACT_APP_YOUTUBE_API_KEY;
 
 const styles = {
   root: {
-    paddingTop: 40
+    paddingTop: 20
   },
   input: {
     width: 200,
@@ -55,7 +55,6 @@ class AddArtist extends Component {
               InputProps={{
                 className: classes.input
               }}
-              inputStyle={{ textTransform: 'capitalize'}}
               onChange={this.getSearch}
               value={this.state.search}
             />

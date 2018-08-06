@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { withRouter } from "react-router-dom";
 
-import { Grid, Button } from "@material-ui/core";
+import { Grid, IconButton } from "@material-ui/core";
 import AddIcon from "@material-ui/icons/Add";
 
 import { withStyles } from "@material-ui/core/styles";
@@ -10,18 +10,17 @@ import { withStyles } from "@material-ui/core/styles";
 const styles = {
   addButton: {
     color: "#eeeeee",
-    fontSize: 60
+    fontSize: 40
   },
   card: {
-    width: 80,
-    height: 80,
+    width: 50,
+    height: 50,
     margin: "auto",
-    marginTop: 40,
+    marginTop: 30,
     background: "#ED0000"
   },
   font: {
-    color: "#eeeeee",
-    paddingTop: 20
+    color: "#eeeeee"
   }
 };
 
@@ -34,9 +33,9 @@ class AddService extends Component {
     const { classes } = this.props;
     return (
       <Grid item xs={12}>
-        <Button className={classes.card} onClick={this.addArtist}>
+        <IconButton className={classes.card} onClick={this.addArtist}>
           <AddIcon className={classes.addButton} />
-        </Button>
+        </IconButton>
       </Grid>
     );
   }

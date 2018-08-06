@@ -1,8 +1,9 @@
 import { store } from 'react-easy-state';
 
 const details = store({
-    id: ['UC3SEvBYhullC-aaEmbEQflg','UCVp3nfGRxmMadNDuVbJSk8A'],
-    thumbUrl: []
+    id: [],
+    thumbUrl: [],
+    userUrl: []
 })
 
 //'UC3SEvBYhullC-aaEmbEQflg','UCVp3nfGRxmMadNDuVbJSk8A'

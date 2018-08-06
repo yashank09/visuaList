@@ -13,8 +13,8 @@ const styles = theme => ({
     padding: 10
   },
   card: {
-    width: 180,
-    height: 200,
+    width: 220,
+    height: 240,
     background: "#ED0000"
   },
   font: {
@@ -47,6 +47,7 @@ class ChannelLayout extends Component {
   render() {
     const { classes } = this.props;
     let title = this.state.channelData[0];
+    
     return (
       <Grid item xs={6} md={4} className={classes.root}>
         {
