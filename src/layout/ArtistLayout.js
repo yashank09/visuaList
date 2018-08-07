@@ -67,7 +67,7 @@ class ArtistLayout extends Component {
               variant="headline"
               component="h3"
             >
-            Your Personalized YouTube Playlist
+            Your Personalized YouTube Library
             </Typography>
         {!details.id.length ? (
           <div>

@@ -25,7 +25,6 @@ class VideoCard extends Component {
   }
 
   _onReady(event) {
-    // access to player in all event handlers via event.target
     event.target.pauseVideo();
   }
 
@@ -37,11 +36,12 @@ class VideoCard extends Component {
       width: "100%",
       height: "100%",
       playerVars: {
-        autoplay: 1
+        autoplay: 1,
+        rel: 0
       }
     };
 
-    return (
+    return ( 
       <React.Fragment>
         <Grid container justify={justify}>
           <Grid item xs={12} md={12}>
@@ -52,15 +52,15 @@ class VideoCard extends Component {
                 onReady={this._onReady}
               />
             </Card>
-          </Grid>
             <Typography
               gutterBottom
-              variant="subheading"
+              variant="headline"
               component="h3"
               className={classes.font}
             >
-              title
+              {this.props.title}
             </Typography>
+          </Grid>
         </Grid>
       </React.Fragment>
     );

@@ -1,1 +1,1 @@
-VisuaList - Save and Watch your Favourite Youtube Artists.
+Visualist - Your Personalized YouTube Library.

@@ -26,13 +26,14 @@ class VideoLayout extends Component {
   render() {
     const data = this.props.data.items;
     const { classes } = this.props;
+    console.log();
     return (
       <div>
       { data &&
       data.map((data,index) =>
       <Grid className={classes.root}  key={index}>
         {
-          <VideoCard vidId={data.id.videoId} />
+          <VideoCard vidId={data.id.videoId} title={data.snippet.title} />
         }
       </Grid>
       )}

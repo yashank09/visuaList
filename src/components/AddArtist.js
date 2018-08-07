@@ -15,7 +15,6 @@ const styles = {
   input: {
     width: 200,
     color: "#eeeeee",
-
   }
 };
 
