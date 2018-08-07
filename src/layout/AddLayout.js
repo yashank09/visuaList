@@ -9,18 +9,14 @@ import { withStyles } from "@material-ui/core/styles";
 
 const styles = {
   addButton: {
-    color: "#eeeeee",
+    color: "#2B2B2B",
     fontSize: 40
   },
   card: {
     width: 50,
     height: 50,
     margin: "auto",
-    marginTop: 30,
-    background: "#ED0000"
-  },
-  font: {
-    color: "#eeeeee"
+    background: "#F00"
   }
 };
 

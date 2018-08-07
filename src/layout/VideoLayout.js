@@ -6,11 +6,7 @@ import { withStyles } from "@material-ui/core/styles";
 
 import VideoCard from "../components/VideoCard";
 
-const styles = theme => ({
-  root: {
-    paddingTop: theme.spacing.unit * 4,
-    paddingBottom: theme.spacing.unit * 1,
-  },
+const styles = () => ({
   card: {
     background: "#ED0000"
   },
@@ -20,21 +16,27 @@ const styles = theme => ({
 });
 
 class VideoLayout extends Component {
-  componentWillMount(){
+  constructor(){
+    super();
     window.YTConfig = {
       host: "https://www.youtube.com"
     };
   }
+
   render() {
     const data = this.props.data.items;
     const { classes } = this.props;
     return (
-      <Grid className={classes.root}>
+      <div>
+      { data &&
+      data.map((data,index) =>
+      <Grid className={classes.root}  key={index}>
         {
-          <VideoCard data={data}/>
-
+          <VideoCard vidId={data.id.videoId} />
         }
       </Grid>
+      )}
+      </div>
     );
   }
 }

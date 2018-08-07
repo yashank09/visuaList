@@ -8,7 +8,7 @@ import { withStyles } from "@material-ui/core/styles";
 
 const styles = {
   card: {
-    height: 300
+    height: 700
   },
   font: {
     color: "#eeeeee",
@@ -30,23 +30,24 @@ class VideoCard extends Component {
   }
 
   render() {
+    console.log(this.props.vidId);
     const { classes } = this.props;
     const { justify } = this.state;
     const opts = {
       width: "100%",
+      height: "100%",
       playerVars: {
-        // https://developers.google.com/youtube/player_parameters
         autoplay: 1
       }
     };
-    console.log(this.props.data);
+
     return (
       <React.Fragment>
         <Grid container justify={justify}>
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={12}>
             <Card className={classes.card}>
               <YouTube
-                videoId="2g811Eo7K8U"
+                videoId={this.props.vidId}
                 opts={opts}
                 onReady={this._onReady}
               />

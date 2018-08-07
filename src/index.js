@@ -11,7 +11,7 @@ import {BrowserRouter} from 'react-router-dom';
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: "#ED0000"
+      main: "#F00"
     },
     typography: {
       fontFamily: "Roboto"

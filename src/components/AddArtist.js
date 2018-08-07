@@ -10,11 +10,12 @@ const API_KEY = process.env.REACT_APP_YOUTUBE_API_KEY;
 
 const styles = {
   root: {
-    paddingTop: 20
+    paddingTop: 40
   },
   input: {
     width: 200,
-    color: "#eeeeee"
+    color: "#eeeeee",
+
   }
 };
 

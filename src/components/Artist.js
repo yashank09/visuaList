@@ -15,7 +15,7 @@ class Artist extends Component {
   componentDidMount() {
     const userId = this.props.match.params.id;
     fetch(
-      `https://www.googleapis.com/youtube/v3/search?order=viewCount&part=snippet&channelId=${userId}&maxResults=10&key=${API_KEY}`
+      `https://www.googleapis.com/youtube/v3/search?order=date&part=snippet&channelId=${userId}&maxResults=3&key=${API_KEY}`
     )
       .then(res => res.json())
       .then(data => this.setState({ videoData: data }));

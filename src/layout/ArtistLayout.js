@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import {withRouter} from "react-router-dom";
+import { withRouter } from "react-router-dom";
 
 import { view } from "react-easy-state";
 import details from "../store/index";
@@ -13,19 +13,31 @@ const styles = theme => ({
   root: {
     ...theme.mixins.gutters(),
     paddingTop: theme.spacing.unit * 4,
-    paddingBottom: theme.spacing.unit * 1
+    paddingBottom: theme.spacing.unit * 1,
+    overflow: "auto"
   },
   card: {
-    width: 220,
-    height: 240
+    width: 260,
+    height: 280,
+    marginLeft: 20,
+    marginRight: 20
   },
   font: {
     color: "#eeeeee",
-    marginTop: 10
+    marginTop: 20
   },
   media: {
-    width: 240,
-    height: 260
+    width: 260,
+    height: 280
+  },
+  roll: {
+    overflow: "auto"
+  },
+  flow: {
+    marginTop: 20,
+    minWidth: 650,
+    maxWidth: 1500,
+    overflow: "visible"
   }
 });
 
@@ -41,34 +53,70 @@ class ArtistLayout extends Component {
     event.target.pauseVideo();
   }
 
-  getVideo = (userUrl) => {
+  getVideo = userUrl => {
     this.props.history.push(`/artist/${userUrl}`);
-  }
+  };
 
   render() {
     const { id, thumbUrl, userUrl } = details;
     const { classes } = this.props;
-    const { justify } = this.state;
     return (
       <div>
-        {details.id &&
-          id.map((data, index) => (
-            <Grid container justify={justify}  className={classes.root} key={index}>
-            <Grid item>
-                <Card className={classes.card}>
-                  <CardMedia className={classes.media} image={thumbUrl[index]} onClick={this.getVideo.bind(this, userUrl[index])} />
-                </Card>
+        <Typography
+              className={classes.font}
+              variant="headline"
+              component="h3"
+            >
+            Your Personalized YouTube Playlist
+            </Typography>
+        {!details.id.length ? (
+          <div>
+            <Typography
+              className={classes.font}
+              variant="subheading"
+              component="h3"
+            >
+            Press The Logo To Add Your First Channel
+            </Typography>
+          </div>
+        ) : (
+          <div>
+            <Grid item xs={6} md={4}>
               <Typography
-                gutterBottom
-                variant="subheading"
-                component="h3"
                 className={classes.font}
+                variant="headline"
+                component="h3"
               >
-                {data}
+                Your Library
               </Typography>
             </Grid>
+            <Grid className={classes.roll}>
+              <Grid container className={classes.flow}>
+                {id.map((data, index) => (
+                  <Grid key={index}>
+                    <Card className={classes.card}>
+                      <CardMedia
+                        className={classes.media}
+                        image={thumbUrl[index]}
+                        onClick={this.getVideo.bind(this, userUrl[index])}
+                      />
+                    </Card>
+                    <Grid item>
+                      <Typography
+                        gutterBottom
+                        variant="subheading"
+                        component="h3"
+                        className={classes.font}
+                      >
+                        {data}
+                      </Typography>
+                    </Grid>
+                  </Grid>
+                ))}
+              </Grid>
             </Grid>
-          ))}
+          </div>
+        )}
       </div>
     );
   }
