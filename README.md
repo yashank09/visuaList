@@ -1,4 +1,4 @@
-Visualist - Your Personalized YouTube Library.
+##Visualist - Your Personalized YouTube Library.
 
 Made on React and Node. Works on Desktop and Mobile.
 
